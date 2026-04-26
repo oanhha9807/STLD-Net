@@ -21,6 +21,8 @@ It leverages both **spatial** and **temporal** information in ECG signals, while
 
 ---
 
+![Framework Overview](path/to/framework.png)
+
 ## Datasets
 
 STLD-Net has been evaluated on the following **two multi-label ECG datasets**:
@@ -36,6 +38,8 @@ STLD-Net has been evaluated on the following **two multi-label ECG datasets**:
    - Provides high-quality ECG signals for model training and evaluation  
 
 > Both datasets are used to validate STLD-Net’s ability to model temporal and spatial features while handling label correlations effectively.
+
+
 
 ---
 
