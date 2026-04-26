@@ -21,7 +21,7 @@ It leverages both **spatial** and **temporal** information in ECG signals, while
 
 ---
 
-![Framework Overview](path/to/framework.png)
+![Framework Overview](framework/Framework_MoE.png)
 
 ## Datasets
 
