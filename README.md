@@ -76,6 +76,9 @@ STLD-Net consists of four major components:
 
 ---
 
+![Framework Overview](framework/Fig6_LDM_color_legend.png)
+
+
 ## Installation
 
 ```bash
