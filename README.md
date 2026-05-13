@@ -27,12 +27,12 @@ It leverages both **spatial** and **temporal** information in ECG signals, while
 
 STLD-Net has been evaluated on the following **two multi-label ECG datasets**:
 
-1. **Dataset A (e.g., PTB-XL):**  
+1. **Dataset PTB-XL:**  
    - Public 12-lead ECG dataset  
    - Multi-label annotations of 17 cardiac conditions  
    - Sampling rate: 500 Hz, signal length varies (~10 seconds)  
 
-2. **Dataset B (e.g., CPSC 2018):**  
+2. **Dataset CPSC 2018:**
    - Multi-lead ECG recordings from hospital patients  
    - Multi-label classification task with 9–16 cardiac conditions  
    - Provides high-quality ECG signals for model training and evaluation  
