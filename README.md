@@ -1,51 +1,84 @@
-# STLD-Net: Spatial–Temporal Label Decoupling Network for Multi-label ECG Classification
+# STLD-Net: A Spatio-Temporal Mixture-of-Experts Framework with Label Decoupling and Co-Occurrence Modeling for Multi-Label ECG Classification
 
-**STLD-Net** is a deep learning framework designed for **multi-label ECG classification**.  
-It leverages both **spatial** and **temporal** information in ECG signals, while explicitly modeling **label dependencies**.
+**STLD-Net** is a deep learning framework for **multi-label ECG classification** that jointly models temporal ECG dynamics, spatial inter-lead relationships, and label dependencies.  
+The framework integrates a **Spatio-Temporal Mixture-of-Experts (MoE)** architecture with **Label Decoupling** and **Inter-Label Co-Occurrence Modeling** to improve discriminability among correlated cardiac abnormalities.
 
 ---
 
 ## Key Features
 
-- **Temporal Modeling:**  
-  Uses **Bi-directional LSTM (Bi-LSTM)** to capture temporal dependencies in ECG sequences.
+- **Spatio-Temporal ECG Modeling:**  
+  Combines temporal sequence modeling and spatial inter-lead representation learning to effectively capture complex ECG characteristics.
 
-- **Spatial Modeling:**  
-  Uses **Vision Transformer (ViT)** to extract spatial patterns across multiple ECG leads.
+- **Sparse Mixture-of-Experts (MoE):**  
+  Employs sparse expert routing to adaptively specialize across heterogeneous ECG patterns while maintaining computational efficiency.
 
-- **Label Decoupling:**  
-  Decouples labels to reduce interference among correlated labels, improving multi-label prediction accuracy.
+- **Label Decoupling Module (LDM):**  
+  Projects shared ECG representations into independent label-specific subspaces to alleviate inter-label optimization interference during training.
 
-- **Label Co-occurrence:**  
-  Captures co-occurrence relationships among ECG labels for better prediction of rare or co-dependent conditions.
+- **Inter-Label Co-Occurrence Modeling:**  
+  Preserves clinically meaningful dependencies among cardiac conditions through residual co-occurrence modeling.
+
+- **Multi-Scale Feature Learning:**  
+  Captures both local waveform morphology and long-range temporal dependencies for robust ECG interpretation.
+
+- **Backbone-Agnostic Design:**  
+  The proposed Label Decoupling and Co-Occurrence modules can be integrated into various ECG backbones.
 
 ---
 
 ![Framework Overview](framework/Framework_MoE.png)
 
+---
+
 ## Datasets
 
-STLD-Net has been evaluated on the following **two multi-label ECG datasets**:
+STLD-Net has been evaluated on multiple public ECG benchmarks for multi-label cardiac abnormality classification:
 
-1. **Dataset PTB-XL:**  
-   - Public 12-lead ECG dataset  
-   - Multi-label annotations of 17 cardiac conditions  
-   - Sampling rate: 500 Hz, signal length varies (~10 seconds)  
+### 1. PTB-XL
+- Large-scale public 12-lead ECG dataset
+- Multi-label annotations for diverse cardiac abnormalities
+- Sampling rate: 500 Hz
+- Widely used benchmark for automated ECG interpretation
 
-2. **Dataset CPSC 2018:**
-   - Multi-lead ECG recordings from hospital patients  
-   - Multi-label classification task with 9–16 cardiac conditions  
-   - Provides high-quality ECG signals for model training and evaluation  
+### 2. CPSC2018
+- Public multi-lead ECG dataset from the China Physiological Signal Challenge
+- Multi-label cardiac rhythm classification task
+- Contains diverse arrhythmia categories and signal variations
 
-> Both datasets are used to validate STLD-Net’s ability to model temporal and spatial features while handling label correlations effectively.
+### 3. Georgia
+- Public clinical ECG dataset with multi-label annotations
+- Includes various co-occurring cardiac conditions
+- Used to evaluate model generalization across datasets
 
+> These datasets are used to validate STLD-Net’s ability to jointly model spatio-temporal ECG features while handling complex inter-label dependencies.
 
+---
+
+## Framework Overview
+
+STLD-Net consists of four major components:
+
+1. **Spatio-Temporal Encoder**
+   - Extracts temporal and spatial ECG representations
+   - Uses adaptive expert specialization through sparse MoE routing
+
+2. **Label Decoupling Module (LDM)**
+   - Learns independent label-aware subspaces
+   - Reduces direct inter-label interference
+
+3. **Inter-Label Co-Occurrence Module**
+   - Models residual dependencies among diagnostic labels
+   - Preserves clinically realistic co-occurrence patterns
+
+4. **Multi-Label Prediction Head**
+   - Produces final diagnostic predictions for multiple cardiac conditions
 
 ---
 
 ## Installation
 
 ```bash
-git clone ...
+git clone <repository_url>
 cd STLD-Net
 pip install -r requirements.txt
