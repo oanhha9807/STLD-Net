@@ -10,8 +10,8 @@ The framework integrates a **Spatio-Temporal Mixture-of-Experts (MoE)** architec
 - **Spatio-Temporal ECG Modeling:**  
   Combines temporal sequence modeling and spatial inter-lead representation learning to effectively capture complex ECG characteristics.
 
-- **Sparse Mixture-of-Experts (MoE):**  
-  Employs sparse expert routing to adaptively specialize across heterogeneous ECG patterns while maintaining computational efficiency.
+- **Share Mixture-of-Experts (MoE):**  
+  Employs sparse expert and share expert routing to adaptively specialize across heterogeneous ECG patterns while maintaining computational efficiency.
 
 - **Label Decoupling Module (LDM):**  
   Projects shared ECG representations into independent label-specific subspaces to alleviate inter-label optimization interference during training.
@@ -75,7 +75,7 @@ STLD-Net consists of four major components:
    - Produces final diagnostic predictions for multiple cardiac conditions
 
 ---
-
+## Results
 ![Framework Overview](framework/Fig6_LDM_color_legend.png)
 
 
