@@ -46,6 +46,6 @@ STLD-Net has been evaluated on the following **two multi-label ECG datasets**:
 ## Installation
 
 ```bash
-git clone https://github.com/your-repo/STLD-Net.git
+git clone ...
 cd STLD-Net
 pip install -r requirements.txt
